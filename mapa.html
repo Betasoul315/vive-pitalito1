@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapa | Vive Pitalito</title>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></head>
+<body >
+<div class="topbar"><div class="container"><span>UNAD • Aplicaciones Multimedia</span><span>2026</span></div></div>
+
+    <header class="nav">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <span class="logo">VP</span>
+          <span>Vive Pitalito<small data-i18n="brandTag">Turismo local • Pitalito, Huila</small></span>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">☰</button>
+        <nav class="menu" id="menu">
+          <a href="index.html" data-i18n="navHome">Inicio</a>
+          <a href="miradores.html" data-i18n="navExplore">Explorar</a>
+          <a href="mapa.html" data-i18n="navMap">Mapa</a>
+          <a href="sobre.html" data-i18n="navAbout">Sobre el proyecto</a>
+          <a href="creditos.html" data-i18n="navCredits">Créditos</a>
+          <div class="lang"><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
+        </nav>
+      </div>
+    
+<div class="category-nav" aria-label="Categorías principales">
+  <a href="miradores.html">🌿 <span data-i18n="nature">Naturaleza</span></a>
+  <a href="cafe.html">☕ <span data-i18n="coffee">Café y gastronomía</span></a>
+  <a href="artesanias.html">🎨 <span data-i18n="culture">Cultura</span></a>
+  <a href="eventos.html">🎉 <span data-i18n="events">Eventos</span></a>
+</div>
+</header>
+
+<section class="page-hero"><div class="container"><span class="eyebrow">MAPA</span><h1 data-i18n="mapTitle">Explora Pitalito en el mapa</h1><p data-i18n="mapText">Esta primera versión utiliza el área de Pitalito como referencia.</p></div></section>
+<section class="section"><div class="container">
+  <div class="note">Las coordenadas individuales solo se mostrarán cuando estén verificadas. Mientras tanto, cada experiencia dispone de un acceso directo a Google Maps para consultar su ubicación.</div>
+  <div class="map-wrap"><div id="map"></div></div>
+  <div class="section-head" style="margin-top:42px"><div><span class="eyebrow">24 EXPERIENCIAS</span><h2>Ubica una experiencia</h2></div></div>
+  <div class="experience-grid" id="map-experiences"></div>
+</div></section>
+
+
+    <footer><div class="container">
+      <div><strong>Vive Pitalito</strong><div class="small" data-i18n="footer">Proyecto académico • Aplicaciones Multimedia • UNAD • 2026</div></div>
+      <div class="small">HTML5 • CSS3 • JavaScript</div>
+    </div></footer>
+<script src="js/data.js"></script><script src="js/app.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="js/map.js"></script><script>document.addEventListener("DOMContentLoaded",()=>{const box=document.getElementById("map-experiences");if(!box)return;const pages={nature:"miradores.html",coffee:"cafe.html",culture:"artesanias.html",events:"eventos.html"};const slug=s=>String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");const all=[];experiences.forEach(g=>g.names.forEach(n=>all.push({...n,section:g.section,image:g.image})));box.innerHTML=all.map(n=>`<article class="card reveal"><div class="card-body"><span class="pill">${siteContent.es[n.section]||n.section}</span><h3>${n.name}</h3><p>${n.description_es||siteContent.es.preliminary}</p><div class="card-actions"><a class="btn secondary" href="${pages[n.section]}#${slug(n.name)}">Ver ficha</a><a class="btn secondary" target="_blank" rel="noopener noreferrer" href="${n.maps_url}">Google Maps</a></div></div></article>`).join("")});</script>
+</body></html>

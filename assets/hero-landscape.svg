@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dcefe4"/><stop offset="1" stop-color="#f7ead0"/>
+    </linearGradient>
+    <linearGradient id="mount" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c7a59"/><stop offset="1" stop-color="#123f31"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="620" rx="42" fill="url(#sky)"/>
+  <circle cx="690" cy="150" r="72" fill="#e3b75b" opacity=".9"/>
+  <path d="M0 430 L175 235 L295 370 L455 180 L640 395 L760 270 L900 430 V620 H0Z" fill="url(#mount)"/>
+  <path d="M0 480 L180 335 L285 420 L455 290 L610 455 L760 350 L900 475 V620 H0Z" fill="#0f4f3a" opacity=".72"/>
+  <path d="M0 510 Q170 430 330 500 T650 485 T900 500 V620 H0Z" fill="#5f8b54"/>
+  <path d="M0 540 Q170 475 340 545 T670 530 T900 535 V620 H0Z" fill="#244f3a"/>
+  <g fill="#fff" opacity=".86">
+    <circle cx="180" cy="235" r="8"/><circle cx="195" cy="220" r="12"/><circle cx="212" cy="235" r="8"/>
+  </g>
+  <g fill="#f2c96b">
+    <circle cx="130" cy="525" r="5"/><circle cx="152" cy="510" r="4"/><circle cx="175" cy="528" r="6"/>
+    <circle cx="710" cy="515" r="5"/><circle cx="735" cy="500" r="4"/><circle cx="760" cy="520" r="6"/>
+  </g>
+</svg>
